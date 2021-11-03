@@ -1,6 +1,6 @@
-FROM node:10-alpine
+FROM sitespeedio/node:ubuntu-18.04-nodejs10.15.3
 ARG VAULT
-RUN apk update && apk add make git g++ python
+RUN apt update && apt install -y make git g++ python nano htop mc
 COPY . /home/plasma-contracts
 
 WORKDIR /home/plasma-contracts/MultiSigWallet
@@ -18,3 +18,5 @@ rm -Rf ./build && \
 npm install && \
 npx truffle version && \
 npx truffle compile
+ 
+#CMD  npx truffle migrate --network ganachewin
