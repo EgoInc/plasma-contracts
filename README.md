@@ -84,8 +84,10 @@ You can also run within the docker with the provided [Dockerfile](./Dockerfile).
 # build the docker image
 docker build -t omisego/plasma-contract .
 
-# deploy the contract
-docker run --rm omisego/plasma-contract npx truffle migrate --network remote
+docker run -it --rm omisego/plasma-contract /bin/bash
+
+# inside the container deploy the contract
+> npx truffle migrate --network remote
 ```
 
 For more detail of the deploying scripts and the env vars to set, see [deploying.md](./plasma_framework/docs/deploying/deploying.md)
